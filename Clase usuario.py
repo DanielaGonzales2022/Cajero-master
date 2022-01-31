@@ -16,13 +16,15 @@ class Usuario:
         clave_validar = 0
         intentos = 0
         clave_nueva = 0
-        while(clave_validar != Usuario.clave or intentos <= 3 ):
+        while(clave_validar != Usuario.clave and intentos <= 3 ):
             clave_validar = int(input("Digite su clave"))
             intentos += 1
         if clave_validar == Usuario.clave:
             while(clave_validar != clave_nueva):    
                 clave_validar =  int(input("Digite nueva clave: "))
                 clave_nueva = int(input("Introduzca nuevamente la clave: "))
+        else:
+            print("Intentelo mas tarde su clave es incorrecta")
     
     def depositar(self,cant_depositar):
         Usuario.saldo += cant_depositar
